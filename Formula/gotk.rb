@@ -2,21 +2,21 @@
 class Gotk < Formula
   desc "GitOps Toolkit CLI"
   homepage "https://toolkit.fluxcd.io/"
-  version "0.1.7"
+  version "0.1.8"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/fluxcd/toolkit/releases/download/v0.1.7/gotk_0.1.7_darwin_amd64.tar.gz"
-    sha256 "f3539491586573e5fc91d396c18e699cca45eb5f31f60abf1fc79b8a4a17f247"
+    url "https://github.com/fluxcd/toolkit/releases/download/v0.1.8/gotk_0.1.8_darwin_amd64.tar.gz"
+    sha256 "bc9ba4159d70c11c8d2eb9d1703314486a7dc2305064c553eb865dd7e7b0483d"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/fluxcd/toolkit/releases/download/v0.1.7/gotk_0.1.7_linux_amd64.tar.gz"
-      sha256 "6b95f91a1156c0fc29d65daa2e5514a2254ce3ff2a0050930b197846b6ab6472"
+      url "https://github.com/fluxcd/toolkit/releases/download/v0.1.8/gotk_0.1.8_linux_amd64.tar.gz"
+      sha256 "181fcfe3f06e917e8521718813d0db17de0c7cf4c70321326641448f1774fe3e"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/fluxcd/toolkit/releases/download/v0.1.7/gotk_0.1.7_linux_arm64.tar.gz"
-        sha256 "f2a9e9bbde7197e11cc447930fff8c64cd217d4e6fd931612f11fa3ade285373"
+        url "https://github.com/fluxcd/toolkit/releases/download/v0.1.8/gotk_0.1.8_linux_arm64.tar.gz"
+        sha256 "7f5cafdc2093f1831391d69e7d527452f890f49797071f4bf82d3e55f8a71e54"
       else
       end
     end
