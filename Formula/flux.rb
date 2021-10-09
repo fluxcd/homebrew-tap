@@ -5,35 +5,42 @@
 class Flux < Formula
   desc "Flux CLI"
   homepage "https://fluxcd.io/"
-  version "0.17.2"
+  version "0.18.0"
   bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/fluxcd/flux2/releases/download/v0.17.2/flux_0.17.2_darwin_amd64.tar.gz"
-      sha256 "fa5a5c04c4b33e791d6bf0a42322b64495cbb69bff9ce45527712dfe5673a0c8"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/fluxcd/flux2/releases/download/v0.17.2/flux_0.17.2_darwin_arm64.tar.gz"
-      sha256 "1d7425341cbf02a782bc51b1f993534af47b7c7141a6cff188a3c2019ccba5b4"
+      url "https://github.com/fluxcd/flux2/releases/download/v0.18.0/flux_0.18.0_darwin_arm64.tar.gz"
+      sha256 "6d918fe148b790896c7d05c8509a9aed4269164319c2f0adca5ea461ebf44e1c"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/fluxcd/flux2/releases/download/v0.18.0/flux_0.18.0_darwin_amd64.tar.gz"
+      sha256 "433e15cf8c4d6858d6b156db5f00944ca0a067425671a731939bdeaabe94c8ec"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/fluxcd/flux2/releases/download/v0.17.2/flux_0.17.2_linux_amd64.tar.gz"
-      sha256 "3edce41beb437d09ec5e2e2502aa355444e4df30ef87936e8f265b9ff2194047"
+      url "https://github.com/fluxcd/flux2/releases/download/v0.18.0/flux_0.18.0_linux_amd64.tar.gz"
+      sha256 "8ac80a2f6d0e80248190365217bf3fcf09a81debaa85850fbf2cd4bb5ddaf54d"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fluxcd/flux2/releases/download/v0.17.2/flux_0.17.2_linux_arm64.tar.gz"
-      sha256 "dbcf47a00d029f498d71964e0780196fac5011b2671de05e18aa2d032b490331"
+      url "https://github.com/fluxcd/flux2/releases/download/v0.18.0/flux_0.18.0_linux_arm64.tar.gz"
+      sha256 "c903432ff0a09791c0ade5b8ff5c85d355d1d2a5342da6d91a19aab7ec10c793"
     end
   end
 
-  depends_on "kubectl" => :optional
-
   def install
     bin.install "flux"
+
+    bash_output = Utils.safe_popen_read(bin/"flux", "completion", "bash")
+    (bash_completion/"flux").write bash_output
+
+    zsh_output = Utils.safe_popen_read(bin/"flux", "completion", "zsh")
+    (zsh_completion/"_flux").write zsh_output
+
+    fish_output = Utils.safe_popen_read(bin/"flux", "completion", "fish")
+    (fish_completion/"flux.fish").write fish_output
   end
 
   test do
