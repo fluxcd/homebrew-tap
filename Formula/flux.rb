@@ -5,28 +5,28 @@
 class Flux < Formula
   desc "Flux CLI"
   homepage "https://fluxcd.io/"
-  version "0.18.2"
+  version "0.18.3"
   bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/fluxcd/flux2/releases/download/v0.18.2/flux_0.18.2_darwin_amd64.tar.gz"
-      sha256 "05ab02d27bcd0a412fa560a23204161c33732efe4b5cb99781351230ee09fb8c"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/fluxcd/flux2/releases/download/v0.18.2/flux_0.18.2_darwin_arm64.tar.gz"
-      sha256 "0fe98caa8b4bd9d6d41726a32eb4c8051b56b89504599513fe146fa958d0646c"
+      url "https://github.com/fluxcd/flux2/releases/download/v0.18.3/flux_0.18.3_darwin_arm64.tar.gz"
+      sha256 "928f93f82bc7359d1c82980b34ec479b1c02371f9b7724a91ff93a61ac08debe"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/fluxcd/flux2/releases/download/v0.18.3/flux_0.18.3_darwin_amd64.tar.gz"
+      sha256 "aaf93adef9c3f9c3340e7545126d7aea8a29051ee70d62024765d23f1af1f5a4"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/fluxcd/flux2/releases/download/v0.18.2/flux_0.18.2_linux_amd64.tar.gz"
-      sha256 "2138c0ef989cfdb0f197b62309283c25aaf06334c8c40a6e3dfd98daf21fffe1"
+      url "https://github.com/fluxcd/flux2/releases/download/v0.18.3/flux_0.18.3_linux_amd64.tar.gz"
+      sha256 "848c7d135f851a64983626d231123b3570aa2b65d74da136a14a7c1ea807cc46"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fluxcd/flux2/releases/download/v0.18.2/flux_0.18.2_linux_arm64.tar.gz"
-      sha256 "c45b2d28768643cea322d1908e02fd91752847ab682e967ece4b243485658340"
+      url "https://github.com/fluxcd/flux2/releases/download/v0.18.3/flux_0.18.3_linux_arm64.tar.gz"
+      sha256 "3c6817fd3459bf50d73d4f5d90a903a3db1f0e4805be8104aadb0e9013f9146a"
     end
   end
 
