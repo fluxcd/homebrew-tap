@@ -5,42 +5,80 @@
 class Flux < Formula
   desc "Flux CLI"
   homepage "https://fluxcd.io/"
-  version "0.19.0"
-  bottle :unneeded
+  version "0.19.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/fluxcd/flux2/releases/download/v0.19.0/flux_0.19.0_darwin_arm64.tar.gz"
-      sha256 "85607128573ba8aa7d0bca9f88bafc68eb49dcb70bb50d0636b03d89cdf27788"
+      url "https://github.com/fluxcd/flux2/releases/download/v0.19.1/flux_0.19.1_darwin_arm64.tar.gz"
+      sha256 "dd5827dfa8d7e12e24c2fb9e416431a9f65547fc82719e6e48081b28a5316f2b"
+
+      def install
+        bin.install "flux"
+
+        bash_output = Utils.safe_popen_read(bin/"flux", "completion", "bash")
+        (bash_completion/"flux").write bash_output
+
+        zsh_output = Utils.safe_popen_read(bin/"flux", "completion", "zsh")
+        (zsh_completion/"_flux").write zsh_output
+
+        fish_output = Utils.safe_popen_read(bin/"flux", "completion", "fish")
+        (fish_completion/"flux.fish").write fish_output
+      end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/fluxcd/flux2/releases/download/v0.19.0/flux_0.19.0_darwin_amd64.tar.gz"
-      sha256 "5dc8635ecd91fbef5eff47f723ce9fe479ea18c877b82748b2bb0f45c08cd244"
+      url "https://github.com/fluxcd/flux2/releases/download/v0.19.1/flux_0.19.1_darwin_amd64.tar.gz"
+      sha256 "60a58e3efe3d8e0698aa2a985766d09c1f7b75ebed104eca9e7286ca0eaf5a8a"
+
+      def install
+        bin.install "flux"
+
+        bash_output = Utils.safe_popen_read(bin/"flux", "completion", "bash")
+        (bash_completion/"flux").write bash_output
+
+        zsh_output = Utils.safe_popen_read(bin/"flux", "completion", "zsh")
+        (zsh_completion/"_flux").write zsh_output
+
+        fish_output = Utils.safe_popen_read(bin/"flux", "completion", "fish")
+        (fish_completion/"flux.fish").write fish_output
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/fluxcd/flux2/releases/download/v0.19.0/flux_0.19.0_linux_amd64.tar.gz"
-      sha256 "56ee2b37a1e6c6c0d694de9727447bfae232b8a4ee5c0924aca7619f9b59a12b"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fluxcd/flux2/releases/download/v0.19.0/flux_0.19.0_linux_arm64.tar.gz"
-      sha256 "6a57c138e1112f6038e0f74fef2a7ae7366f358ec1fe7c6a4edbbfec1c056e76"
+      url "https://github.com/fluxcd/flux2/releases/download/v0.19.1/flux_0.19.1_linux_arm64.tar.gz"
+      sha256 "0210b891b87caad2bb567be75712b632e278db8fcf918e173b0c229683bd1add"
+
+      def install
+        bin.install "flux"
+
+        bash_output = Utils.safe_popen_read(bin/"flux", "completion", "bash")
+        (bash_completion/"flux").write bash_output
+
+        zsh_output = Utils.safe_popen_read(bin/"flux", "completion", "zsh")
+        (zsh_completion/"_flux").write zsh_output
+
+        fish_output = Utils.safe_popen_read(bin/"flux", "completion", "fish")
+        (fish_completion/"flux.fish").write fish_output
+      end
     end
-  end
+    if Hardware::CPU.intel?
+      url "https://github.com/fluxcd/flux2/releases/download/v0.19.1/flux_0.19.1_linux_amd64.tar.gz"
+      sha256 "91b65b1c510368a934c427dab0066db240bafa303c7ce2ce18ed4e347ea3e854"
 
-  def install
-    bin.install "flux"
+      def install
+        bin.install "flux"
 
-    bash_output = Utils.safe_popen_read(bin/"flux", "completion", "bash")
-    (bash_completion/"flux").write bash_output
+        bash_output = Utils.safe_popen_read(bin/"flux", "completion", "bash")
+        (bash_completion/"flux").write bash_output
 
-    zsh_output = Utils.safe_popen_read(bin/"flux", "completion", "zsh")
-    (zsh_completion/"_flux").write zsh_output
+        zsh_output = Utils.safe_popen_read(bin/"flux", "completion", "zsh")
+        (zsh_completion/"_flux").write zsh_output
 
-    fish_output = Utils.safe_popen_read(bin/"flux", "completion", "fish")
-    (fish_completion/"flux.fish").write fish_output
+        fish_output = Utils.safe_popen_read(bin/"flux", "completion", "fish")
+        (fish_completion/"flux.fish").write fish_output
+      end
+    end
   end
 
   test do
