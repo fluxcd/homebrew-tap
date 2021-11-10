@@ -3,7 +3,6 @@ class Gotk < Formula
   desc "GitOps Toolkit CLI"
   homepage "https://toolkit.fluxcd.io/"
   version "0.1.8"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/fluxcd/toolkit/releases/download/v0.1.8/gotk_0.1.8_darwin_amd64.tar.gz"
