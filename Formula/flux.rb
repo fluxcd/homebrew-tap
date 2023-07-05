@@ -5,78 +5,50 @@
 class Flux < Formula
   desc "Flux CLI"
   homepage "https://fluxcd.io/"
-  version "2.0.0-rc.5"
+  version "2.0.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.0.0-rc.5/flux_2.0.0-rc.5_darwin_amd64.tar.gz"
-      sha256 "2d9a96acdc4973fd1a834dce8262bdb0be05f127f30073b783206517b9520693"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.0.0/flux_2.0.0_darwin_amd64.tar.gz"
+      sha256 "7d7473b4fb6f19c67ae7696d378577926c303ab00c04406610a6586cf6556825"
 
       def install
         bin.install "flux"
 
-        bash_output = Utils.safe_popen_read(bin/"flux", "completion", "bash")
-        (bash_completion/"flux").write bash_output
-
-        zsh_output = Utils.safe_popen_read(bin/"flux", "completion", "zsh")
-        (zsh_completion/"_flux").write zsh_output
-
-        fish_output = Utils.safe_popen_read(bin/"flux", "completion", "fish")
-        (fish_completion/"flux.fish").write fish_output
+        generate_completions_from_executable(bin/"flux", "completion")
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.0.0-rc.5/flux_2.0.0-rc.5_darwin_arm64.tar.gz"
-      sha256 "82ce8c6e764941c45cb56cc63d952dd0577e015cf7b8a07fbd464943a0f8c24e"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.0.0/flux_2.0.0_darwin_arm64.tar.gz"
+      sha256 "80eb785d602d28ce42573801266b787dca8791b097cb1b5dafe1d96c5bbe8b79"
 
       def install
         bin.install "flux"
 
-        bash_output = Utils.safe_popen_read(bin/"flux", "completion", "bash")
-        (bash_completion/"flux").write bash_output
-
-        zsh_output = Utils.safe_popen_read(bin/"flux", "completion", "zsh")
-        (zsh_completion/"_flux").write zsh_output
-
-        fish_output = Utils.safe_popen_read(bin/"flux", "completion", "fish")
-        (fish_completion/"flux.fish").write fish_output
+        generate_completions_from_executable(bin/"flux", "completion")
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.0.0-rc.5/flux_2.0.0-rc.5_linux_arm64.tar.gz"
-      sha256 "420fb07745e997cfb8c9bb0e05ac108f3070d7f9373cad3c965bdb8449138f0b"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.0.0/flux_2.0.0_linux_arm64.tar.gz"
+      sha256 "730204249fbc6e1c6cff658d3dc629caca934ce5c55aa62f826ea10ab01e5de1"
 
       def install
         bin.install "flux"
 
-        bash_output = Utils.safe_popen_read(bin/"flux", "completion", "bash")
-        (bash_completion/"flux").write bash_output
-
-        zsh_output = Utils.safe_popen_read(bin/"flux", "completion", "zsh")
-        (zsh_completion/"_flux").write zsh_output
-
-        fish_output = Utils.safe_popen_read(bin/"flux", "completion", "fish")
-        (fish_completion/"flux.fish").write fish_output
+        generate_completions_from_executable(bin/"flux", "completion")
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.0.0-rc.5/flux_2.0.0-rc.5_linux_amd64.tar.gz"
-      sha256 "962f858c4af7a8101535cd2ac300c8cdfae87b8ce4002928737a5da7f708f068"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.0.0/flux_2.0.0_linux_amd64.tar.gz"
+      sha256 "283610583dd13fc41efc5f6e0823ba042a4381b942a85634c477a8adc29e840d"
 
       def install
         bin.install "flux"
 
-        bash_output = Utils.safe_popen_read(bin/"flux", "completion", "bash")
-        (bash_completion/"flux").write bash_output
-
-        zsh_output = Utils.safe_popen_read(bin/"flux", "completion", "zsh")
-        (zsh_completion/"_flux").write zsh_output
-
-        fish_output = Utils.safe_popen_read(bin/"flux", "completion", "fish")
-        (fish_completion/"flux.fish").write fish_output
+        generate_completions_from_executable(bin/"flux", "completion")
       end
     end
   end
