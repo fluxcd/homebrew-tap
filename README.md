@@ -19,6 +19,7 @@ brew install fluxcd/tap/flux@2.2
 Available versions:
 
 - `flux` (latest version)
+- `flux@2.3` (v2.3.x)
 - `flux@2.2` (v2.2.x)
 - `flux@2.1` (v2.1.x)
 - `flux@2.0` (v2.0.x)
