@@ -13,12 +13,20 @@ brew install fluxcd/tap/flux
 To install a specific version, run the following command:
 
 ```shell
-brew install fluxcd/tap/flux@2.2
+brew install fluxcd/tap/flux@2.5
 ```
 
-Available versions:
+## Available versions
+
+> [!NOTE]
+> The Flux project supports the last three minor releases of the CLI.
+> Using an older version is not recommended, as it may not be compatible with the latest Flux features and APIs.
+
+Formulas:
 
 - `flux` (latest version)
+- `flux@2.5` (v2.5.x)
+- `flux@2.4` (v2.4.x)
 - `flux@2.3` (v2.3.x)
 - `flux@2.2` (v2.2.x)
 - `flux@2.1` (v2.1.x)
