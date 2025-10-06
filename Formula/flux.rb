@@ -10,7 +10,7 @@ class Flux < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/fluxcd/flux2/releases/download/v2.7.1/flux_2.7.1_darwin_amd64.tar.gz"
-      sha256 "16e33634625bf707b8a93b06071e7c2764bebbe3332cf5c64ea940a32739ec17"
+      sha256 "2b29f770c5b0b8ecd87c2adeca24e1564ad91888e3c673641fd3bb59b231d8db"
 
       def install
         bin.install "flux"
@@ -20,7 +20,7 @@ class Flux < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/fluxcd/flux2/releases/download/v2.7.1/flux_2.7.1_darwin_arm64.tar.gz"
-      sha256 "eb0abda2be63055af41ebaa39d4747a81c7c0a37ce29a25cdbaf21f1454dd21d"
+      sha256 "372372b412eda2d26c8576d618090c5642dbfb650e2fd97e7d6127622553f035"
 
       def install
         bin.install "flux"
@@ -33,7 +33,7 @@ class Flux < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/fluxcd/flux2/releases/download/v2.7.1/flux_2.7.1_linux_amd64.tar.gz"
-      sha256 "0e613b674ce8c57728017ea98c672c47a18111c4f9c96d039f8db962ec870c1e"
+      sha256 "dbd088c133aee74c409d51fb26d2b3ba3727ca304b88ecc0bf6af878bec007d3"
       def install
         bin.install "flux"
 
@@ -42,7 +42,7 @@ class Flux < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/fluxcd/flux2/releases/download/v2.7.1/flux_2.7.1_linux_arm64.tar.gz"
-      sha256 "0ed5f47db7b44369b1572b5da3098c53ac569d3fdd659bc6183d47ebf68236fa"
+      sha256 "31109d48234ccb39a9175ebf2f65ca2f349dd64faa52f5953cf1a0a07edcf779"
       def install
         bin.install "flux"
 
