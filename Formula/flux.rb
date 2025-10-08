@@ -5,12 +5,12 @@
 class Flux < Formula
   desc "Flux CLI"
   homepage "https://fluxcd.io/"
-  version "2.7.1"
+  version "2.7.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.7.1/flux_2.7.1_darwin_amd64.tar.gz"
-      sha256 "2b29f770c5b0b8ecd87c2adeca24e1564ad91888e3c673641fd3bb59b231d8db"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.7.2/flux_2.7.2_darwin_amd64.tar.gz"
+      sha256 "98ed996c0255247db37a2a86ce149af220f21a8e505dd9320ed091108b4baa81"
 
       def install
         bin.install "flux"
@@ -19,8 +19,8 @@ class Flux < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.7.1/flux_2.7.1_darwin_arm64.tar.gz"
-      sha256 "372372b412eda2d26c8576d618090c5642dbfb650e2fd97e7d6127622553f035"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.7.2/flux_2.7.2_darwin_arm64.tar.gz"
+      sha256 "eaf3579994719900cf037ebc58085e1df0cebe4eeafecaf9e1dc30b89e776b71"
 
       def install
         bin.install "flux"
@@ -32,8 +32,8 @@ class Flux < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.7.1/flux_2.7.1_linux_amd64.tar.gz"
-      sha256 "dbd088c133aee74c409d51fb26d2b3ba3727ca304b88ecc0bf6af878bec007d3"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.7.2/flux_2.7.2_linux_amd64.tar.gz"
+      sha256 "db346a440615b702b675e0fa58a0d0f62f3b239e3658e4abff885eb131887bec"
       def install
         bin.install "flux"
 
@@ -41,8 +41,8 @@ class Flux < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.7.1/flux_2.7.1_linux_arm64.tar.gz"
-      sha256 "31109d48234ccb39a9175ebf2f65ca2f349dd64faa52f5953cf1a0a07edcf779"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.7.2/flux_2.7.2_linux_arm64.tar.gz"
+      sha256 "62f9aa950ca13e18ddfd49d998c9fae398b195c3b5632dcd17bc6c4faf1672da"
       def install
         bin.install "flux"
 
