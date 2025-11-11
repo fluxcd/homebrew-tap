@@ -6,6 +6,8 @@ class FluxAT23 < Formula
   homepage "https://fluxcd.io/"
   version "2.3.0"
 
+  keg_only :versioned_formula
+
   on_macos do
     on_intel do
       url "https://github.com/fluxcd/flux2/releases/download/v2.3.0/flux_2.3.0_darwin_amd64.tar.gz"

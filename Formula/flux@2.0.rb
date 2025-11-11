@@ -6,6 +6,8 @@ class FluxAT20 < Formula
   homepage "https://fluxcd.io/"
   version "2.0.1"
 
+  keg_only :versioned_formula
+
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/fluxcd/flux2/releases/download/v2.0.1/flux_2.0.1_darwin_amd64.tar.gz"
