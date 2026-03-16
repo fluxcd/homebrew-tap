@@ -5,12 +5,12 @@
 class Flux < Formula
   desc "Flux CLI"
   homepage "https://fluxcd.io/"
-  version "2.8.2"
+  version "2.8.3"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.8.2/flux_2.8.2_darwin_amd64.tar.gz"
-      sha256 "04282f387a4e4809d25ec59526c2a5da7bc1c36216b34e93ee511b2ff5a4144e"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.8.3/flux_2.8.3_darwin_amd64.tar.gz"
+      sha256 "24f965c8001a2cd6ddbbe5615aa5d88adfdf5e685772a707610b95d70b93fe50"
 
       define_method(:install) do
         bin.install "flux"
@@ -19,8 +19,8 @@ class Flux < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.8.2/flux_2.8.2_darwin_arm64.tar.gz"
-      sha256 "96d9132ce9ff70fc26b3678b455eb89bd1e40778ea0a7b99de9b124db392ac4d"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.8.3/flux_2.8.3_darwin_arm64.tar.gz"
+      sha256 "71c307573f79e63a21ef9f1f6b9ede3c2017ac5f17a771346154554cc0e4163a"
 
       define_method(:install) do
         bin.install "flux"
@@ -32,8 +32,8 @@ class Flux < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.8.2/flux_2.8.2_linux_amd64.tar.gz"
-      sha256 "711a0ac3d1ea15e957c2775af11ddc48a505b6adaa8fa5db5a65355ee6f49cde"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.8.3/flux_2.8.3_linux_amd64.tar.gz"
+      sha256 "e8b3f87ae73f37656af087cec1bd82ce9034860c2a5d427042d2ee9135fcc8bc"
       define_method(:install) do
         bin.install "flux"
 
@@ -41,8 +41,8 @@ class Flux < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.8.2/flux_2.8.2_linux_arm64.tar.gz"
-      sha256 "5bbee7ebd84d2976500396de763802e328581801ad4d2609403fa8a793ddfa64"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.8.3/flux_2.8.3_linux_arm64.tar.gz"
+      sha256 "8f02cd3c2f058434b40cb264d4f3d961a3d5bc7c4985cc4544946f9b8224632b"
       define_method(:install) do
         bin.install "flux"
 
