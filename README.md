@@ -25,6 +25,8 @@ brew install fluxcd/tap/flux@2.6
 Formulas:
 
 - `flux` (latest version)
+- `flux@2.8` (v2.8.x)
+- `flux@2.7` (v2.7.x)
 - `flux@2.6` (v2.6.x)
 - `flux@2.5` (v2.5.x)
 - `flux@2.4` (v2.4.x)
