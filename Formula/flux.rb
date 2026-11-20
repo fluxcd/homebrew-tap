@@ -5,12 +5,12 @@
 class Flux < Formula
   desc "CLI for GitOps continuous delivery"
   homepage "https://fluxcd.io/"
-  version "2.10.0"
+  version "2.10.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.10.0/flux_2.10.0_darwin_amd64.tar.gz"
-      sha256 "23fc019f5b682c1ff6841a2ce06798b3c8e17452998cb9c2dd57a6440e6340ff"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.10.1/flux_2.10.1_darwin_amd64.tar.gz"
+      sha256 "0e083b1a53887ffee1624c67de74eea3ed9d7fd0215efb4b4090c8cc97abb824"
 
       define_method(:install) do
         bin.install "flux"
@@ -19,8 +19,8 @@ class Flux < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.10.0/flux_2.10.0_darwin_arm64.tar.gz"
-      sha256 "339c5dba218e2b0a04a0841d1dace6c00d65736dc3286038463fa86754ff6c53"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.10.1/flux_2.10.1_darwin_arm64.tar.gz"
+      sha256 "c0a8dc285c568905ae38e25074985f3181c82a3c8d66316959561f27a626909d"
 
       define_method(:install) do
         bin.install "flux"
@@ -32,8 +32,8 @@ class Flux < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.10.0/flux_2.10.0_linux_amd64.tar.gz"
-      sha256 "208dd7012c04fedeed5b2d0b6e63df3b15b1c34a381527811685c098bc9f8659"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.10.1/flux_2.10.1_linux_amd64.tar.gz"
+      sha256 "967365ff84aabc97871827ff33713ef0c09f62dd83c18759e3a5e39adcea9285"
       define_method(:install) do
         bin.install "flux"
 
@@ -41,8 +41,8 @@ class Flux < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fluxcd/flux2/releases/download/v2.10.0/flux_2.10.0_linux_arm64.tar.gz"
-      sha256 "c3c435052e5e18156858bc73f26bcadb62821a6e30951b4b302beb4e65a532c2"
+      url "https://github.com/fluxcd/flux2/releases/download/v2.10.1/flux_2.10.1_linux_arm64.tar.gz"
+      sha256 "da18ddb25c9614405d9e2f13ad014fd660bfcbe7218674cabf9325db73f811e2"
       define_method(:install) do
         bin.install "flux"
 
